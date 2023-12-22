@@ -1,0 +1,89 @@
+﻿
+@model List<ForecastModel> 
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@*<script type="text/javascript">
+    function Myfunc() {
+        var x = document.getElementById(myid).innerHTML = "111""
+    }
+    // Add JavaScript for grid functionality here
+</script>*@
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    
+</div>
+
+
+<table class="table table-bordered ">
+    <thead>
+        <tr>
+            <th>Country</th>
+            <th>Gender</th>
+            <th>AgeGroup</th>
+            <th>2019</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+
+        
+
+        @foreach(var elem in Model) 
+        @if(elem.Gender=="male"){
+                {
+                    <tr id="mytable" >
+                        <td>@elem.Country</td>
+                        <td>@elem.Gender</td>
+                        <td>@elem.AgeGroup</td>
+                        <td > <input class="datainput" type="number" id="maleinput" value=@elem.Value oninput="dataMale()"  /></td>
+                    </tr>
+                    
+                }
+        }
+        <tr>
+            <td></td>
+            <td>MaleTotal</td>
+            <td></td>
+            <td id="total"> </td>
+        </tr>
+        @foreach(var elem in Model)
+            @if (elem.Gender == "female")
+            {
+                <tr>
+                    <td>@elem.Country</td>
+                    <td>@elem.Gender</td>
+                    <td>@elem.AgeGroup</td>
+                    <td class="tab"> <input class="datainput2" type="number" id="myid2" value=@elem.Value oninput="dataFemale()" /></td>
+                </tr>
+                
+                    
+            }
+        <tr>
+            <td></td>
+            <td>FemaleTotal</td>
+            <td></td>
+            <td id="total2"></td>
+        </tr>
+
+        <tr>
+            <td>India Total</td>
+            <td></td>
+            <td></td>
+            <td id="countryTotal" ></td>
+        </tr>
+       
+        
+        
+    </tbody>
+</table>
+
+
+
+<script src="~/js/script1.js" type="text/javascript"></script>
+
+
+

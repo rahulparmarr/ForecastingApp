@@ -1,0 +1,57 @@
+﻿@model ForecastViewModel
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+<form method="post" action="AddData" >
+    <div class="form-group">
+        <label for="">Country</label>
+        <input type="text" class="form-control" id="country" placeholder="Enter name of Country" asp-for="Country" >
+    </div>
+    <br />
+    <div>
+        <div class="mt-3">
+            <label>Gender</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="male" value="male" asp-for="Gender">
+                <label class="form-check-label" for="">Male</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="female" value="female" asp-for="Gender" >
+                <label class="form-check-label" for="flexRadioDefault2">Female</label>
+            </div>
+        </div>
+
+        <div class="mt-3">
+            <label>Age Group</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="agegroup" id="agegroup1" value="20-40" asp-for="AgeGroup" >
+                <label class="form-check-label" for="">20-40</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="agegroup" id="agegroup2" value="40-60" asp-for="AgeGroup">
+                <label class="form-check-label" for="">40-60</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="agegroup" id="agegroup3" value="60-80" asp-for="AgeGroup">
+                <label class="form-check-label" for="">60-80</label>
+            </div>
+        </div>
+    </div>
+
+    <div >
+        <label for="">Year</label>
+        <input type="text" class="form-control" id="year" placeholder="Enter Year" asp-for="Year" >
+    </div>
+    <br />
+    <div>
+        <label for="">Data</label>
+        <input type="number" class="form-control" id="value" placeholder="Enter data for the year" asp-for="Value">
+    </div>
+    <br />    
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
